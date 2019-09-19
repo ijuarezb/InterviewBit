@@ -9,7 +9,8 @@ class TreeNode:
     def __init__(self,key): 
         self.left = None
         self.right = None
-        self.val = key 
+        self.val = key
+        #self.visited = False
 
 # Function to insert node in tree recursively
 def insertNode(root,node): 
@@ -55,31 +56,31 @@ def search(root, data):
     else: return search(root.right, data)
 
 
+if __name__ == '__main__':
+    # Creating a new BST with root as 50
+    # r = TreeNode(55) 
+    # insertNode(r,TreeNode(35)) 
+    # insertNode(r,TreeNode(25)) 
+    # insertNode(r,TreeNode(45)) 
+    # insertNode(r,TreeNode(75)) 
+    # insertNode(r,TreeNode(65)) 
+    # insertNode(r,TreeNode(85)) 
 
-# Creating a new BST with root as 50
-# r = TreeNode(55) 
-# insertNode(r,TreeNode(35)) 
-# insertNode(r,TreeNode(25)) 
-# insertNode(r,TreeNode(45)) 
-# insertNode(r,TreeNode(75)) 
-# insertNode(r,TreeNode(65)) 
-# insertNode(r,TreeNode(85)) 
+    r = TreeNode(11)
+    insertNode(r, TreeNode(2))
+    insertNode(r, TreeNode(9))
+    insertNode(r, TreeNode(13))
+    insertNode(r, TreeNode(57))
+    insertNode(r, TreeNode(25))
+    insertNode(r, TreeNode(17))
+    insertNode(r, TreeNode(1))
+    insertNode(r, TreeNode(90))
+    insertNode(r, TreeNode(3))
 
-r = TreeNode(11)
-insertNode(r, TreeNode(2))
-insertNode(r, TreeNode(9))
-insertNode(r, TreeNode(13))
-insertNode(r, TreeNode(57))
-insertNode(r, TreeNode(25))
-insertNode(r, TreeNode(17))
-insertNode(r, TreeNode(1))
-insertNode(r, TreeNode(90))
-insertNode(r, TreeNode(3))
-
-# Print inoder traversal of the BST 
-inOrderTraversal(r)
-print()
-preOrderTraversal(r)
-print()
-postOrderTraversal(r)
-print()	
+    # Print inoder traversal of the BST 
+    inOrderTraversal(r)
+    print()
+    preOrderTraversal(r)
+    print()
+    postOrderTraversal(r)
+    print()	

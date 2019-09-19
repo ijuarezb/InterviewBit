@@ -45,3 +45,21 @@ if __name__ == '__main__':
 	heapsort(A)
 	print('Sorted list: ', end='')
 	print(A)
+
+
+# Heap declaration :
+
+#     A = []; # declares an empty list / heap. O(1)
+#             # Note that heaps are internally implemented using lists for which heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k. 
+# Insert a new key, value pair K, V:
+
+#     heapq.heappush(A, (K, V));     // O(log n)
+# Delete the smallest key K ( Note that deleting random key K will be inefficient ) :
+
+#     heapq.heappop(A)[0]
+# Find minimum key K in the map ( if the map is not empty ) :
+
+#     A[0][0]
+# Size ( number of entries in the map ) :
+
+#     len(A)

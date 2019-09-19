@@ -39,4 +39,5 @@ class Solution:
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.generateParenthesis(4))
+    n = int(sys.argv[1]) if len(sys.argv) == 2 else 3
+    print(s.generateParenthesis(n))

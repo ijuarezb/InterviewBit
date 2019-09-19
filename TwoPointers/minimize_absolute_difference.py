@@ -33,21 +33,13 @@ class Solution:
     # @param B : list of integers
     # @param C : list of integers
     # @return an integer
-    def solve(self, A, B, C):
-        ia = ib = ic = 0
-        diff = float("INF")
-        while True:
-            diff = min(diff, abs(max(A[ia], B[ib], C[ic]) - min(A[ia], B[ib], C[ic])))
+    def solve(self, A, k):
+        n = len(A)
+        B = []
 
-            if ia < len(A) - 1 and B[ib] >= A[ia] <= C[ic]:
-                ia += 1
-            elif ib < len(B) - 1 and A[ia] >= B[ib] <= C[ic]:
-                ib += 1
-            elif ic < len(C) - 1 and A[ia] >= C[ic] <= B[ib]:
-                ic += 1
-            else:
-                break
-        return diff
+        B = sorted(A)
+        return B[k-1]
+        
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
