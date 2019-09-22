@@ -50,6 +50,8 @@ import sys
 #
 # Your solution should return a list of strings, where each entry corresponds to a single line. The strings should not have “\n” character in them.
 #
+# print(s.prettyJSON('{A:"B",C:{D:"E",F:{G:"H",I:"J"}}}'))
+#
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 class Solution:

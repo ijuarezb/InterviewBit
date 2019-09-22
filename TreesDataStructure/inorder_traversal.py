@@ -63,9 +63,9 @@ class Solution:
             ans.append(stack.pop().val)
 
             if node.right:
-            	stack.append(node.right)
+                stack.append(node.right)
             if node.left:
-            	stack.append(node.left)
+                stack.append(node.left)
 
         return ans
 
@@ -89,6 +89,43 @@ class Solution:
 
         return ans
 
+    def connect_next_preorder(self, A):
+        stack, ans = list(), list()
+        layer, upper_limit = 0, 0
+        i, j = 0, 0
+        tail = None
+
+        if A:
+            stack.append(A)
+        else:
+            return None
+
+        while stack:
+            node = stack[-1]
+            node.next = None
+            val = stack.pop().val
+            ans.append(val)
+
+            if i > upper_limit:
+                layer += 1
+                upper_limit += pow(2, layer)
+                tail = node
+                j = 1
+            else:
+                if j > 0:
+                    tail.next = node
+                    tail = node
+            i += 1
+
+            if node.right:
+                stack.append(node.right)
+            if node.left: 
+                stack.append(node.left)
+
+        #return ans
+
+        print(ans)
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == '__main__':
@@ -104,4 +141,5 @@ if __name__ == '__main__':
     L = s.preorderTraversal(r)
     print(L)
     L = s.postorderTraversal(r)
-    print(L)	
+    print(L)
+    s.connect_next_preorder(r)
