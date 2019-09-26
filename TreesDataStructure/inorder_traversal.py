@@ -124,7 +124,7 @@ class Solution:
 
         #return ans
 
-        print(ans)
+        #print(ans)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -134,12 +134,14 @@ if __name__ == '__main__':
     for arg in range(2, len(sys.argv), 1):
     	insertNode(r, TreeNode(int(sys.argv[arg])))
 
+    # Input DATA to practice: 11 2 9 13 57 25 17 1 90 3
+
     # Print inoder traversal of the BST 
     s = Solution()
     L = s.inorderTraversal(r)
-    print(L)
+    print("In Order Traversal: {}".format(L))
     L = s.preorderTraversal(r)
-    print(L)
+    print("Pre Order Traversal: {}".format(L))
     L = s.postorderTraversal(r)
-    print(L)
+    print("Post Order Traversal: {}".format(L))
     s.connect_next_preorder(r)
