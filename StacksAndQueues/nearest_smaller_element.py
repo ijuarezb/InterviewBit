@@ -63,3 +63,4 @@ if __name__ == '__main__':
         A = []
         for i in range(1, len(sys.argv)):
             A.append(int(sys.argv[i]))
+        print(s.prevSmaller(A))
