@@ -58,3 +58,10 @@ class MinStack:
         if top == -1:
             return -1
         return self.min[-1]
+
+if __name__ == '__main__':
+    ms = MinStack()
+    ms.push(7)
+    ms.pop()
+    p3 = s.top()
+    p4 = s.getMin()
