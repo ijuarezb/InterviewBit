@@ -17,14 +17,12 @@ import sys
 # to 'sum' present in A[]. Also, prints the triplet 
 def find3Numbers(A, sum): 
 	for i in range(len(A)-1): 
-		# Find pair in subarray A[i + 1..n-1] 
-		# with sum equal to sum - A[i] 
+		# Find pair in subarray A[i+1 .. n-1] with sum equal to sum-A[i] 
 		s = set() 
 		curr_sum = sum - A[i] 
 		for j in range(i + 1, len(A)): 
 			if (curr_sum - A[j]) in s: 
-				print("Triplet is", A[i], 
-						", ", A[j], ", ", curr_sum-A[j]) 
+				print('Triplet is: {}, {}, {}'.format(A[i], A[j], curr_sum-A[j])) 
 				return True
 			s.add(A[j]) 
 	
