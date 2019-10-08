@@ -56,20 +56,39 @@ class Solution:
                     dp[tmp[0]] += 1
                     tmp.popleft()
                 else:
-                    print("I am at break")
+                    #print("I am at break")
                     break
             # End resize window
             
             # Find or Select the minimun window
-            print(tmp)
+            #print(tmp)
             if not word or len(tmp) < len(word):
                 word = list(tmp)            
             # End find or select the minimun window
 
         return ''.join(word)
 
+    def minWindowB(self, S, T):
+        import collections
+        need, missing = collections.Counter(T), len(T)
+        
+        I = J = i = 0
+        
+        for j, c in enumerate(S,1):
+            missing -= need[c] > 0
+            need[c] -= 1
+            if not missing:
+                while i < j and need[S[i]] < 0:
+                    need[S[i]] += 1
+                    i += 1
+                if not J or j -i < J - I:
+                    J, I = j, i
+        
+        return S[I:J]
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
     print(s.minWindow("ADOBECODEBANC", "ABC"))
+    print(s.minWindowB("DOBECODEBANC", "ABC"))
