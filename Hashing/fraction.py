@@ -45,12 +45,12 @@ class Solution:
         
         i = len(result)
         while rem:
-            print(rem, result, d)
+            #print(rem, result, d)
             num = rem * 10
             digit = str(num//den)
             
             if rem in d:
-                result = result[:d[rem]]+ "(" + result[d[rem]:] + ")"
+                result = result[:d[rem]] + "(" + result[d[rem]:] + ")"
                 break
             else:
                 result += digit
@@ -65,13 +65,13 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	# print(s.fractionToDecimal(10,3))
-	# print(s.fractionToDecimal(1,2))
-	# print(s.fractionToDecimal(2,1))
-	# print(s.fractionToDecimal(2,3))
-	# print(s.fractionToDecimal(4,9))
-	# print(s.fractionToDecimal(4,333))
-	print(s.fractionToDecimal(7,-6))
+	#print(s.fractionToDecimal(10,3))
+	#print(s.fractionToDecimal(1,2))
+	#print(s.fractionToDecimal(2,1))
+	#print(s.fractionToDecimal(2,3))
+	#print(s.fractionToDecimal(4,9))
+	print(s.fractionToDecimal(4,333))
+	#print(s.fractionToDecimal(7,-6))
 
 
 
