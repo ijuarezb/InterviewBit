@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 import sys
 
 # Colorfoul
@@ -40,3 +40,8 @@ class Solution:
                     d.add(x)
                     
         return 1
+
+if __name__ == '__main__':
+	s = Solution()
+	print(s.colorful(A=23))
+	print(s.colorful(A=3245))
