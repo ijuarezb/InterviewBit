@@ -30,7 +30,7 @@ class Solution:
         d = {}
         list_of_groups = []
         group_number = 0
-        for i in xrange(len(A)):
+        for i in range(len(A)):
             sorted_A_i = ''.join(sorted(A[i]))
             if sorted_A_i not in d:
                 list_of_groups.append([i+1])
@@ -40,3 +40,22 @@ class Solution:
                 list_of_groups[d[sorted_A_i]].append(i+1)
         
         return  list_of_groups
+
+    def anagramsIJB(self, A):
+    	if len(A) == 0: return []
+    	Anagrams = {}
+
+    	for i, word in enumerate(A):
+    		k = ''.join(sorted(word))
+    		if k in Anagrams:
+    			Anagrams[k].append(i+1)
+    		else:
+    			Anagrams[k] = [i+1]
+
+    	return list(Anagrams.values())
+
+if __name__ == '__main__':
+	s = Solution()
+	A = ['cat', 'dog', 'god', 'tca']
+	print(s.anagrams(A))
+	print(s.anagramsIJB(A))
