@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
 import sys
-import math
 from BST import TreeNode
 from BST import insertNode
-from BST import inOrderTraversal
-from BST import preOrderTraversal
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #
