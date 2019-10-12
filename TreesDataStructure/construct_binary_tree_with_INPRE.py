@@ -4,6 +4,7 @@ from BST import TreeNode
 from BST import insertNode
 from BST import inOrderTraversal
 from BST import preOrderTraversal
+from BST import postOrderTraversal
 
 # Construct Binary Tree From Inorder And Preorder
 # https://www.interviewbit.com/problems/construct-binary-tree-from-inorder-and-preorder/
@@ -55,4 +56,6 @@ if __name__ == '__main__':
     inOrderTraversal(t)
     print()
     preOrderTraversal(t)
+    print()
+    postOrderTraversal(t)
     print()
