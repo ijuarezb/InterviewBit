@@ -69,7 +69,7 @@ if __name__ == '__main__':
 	t.right.right.left = TreeNode(5)
 	t.right.right.right = TreeNode(1)
 	print(s.sumNumbers(t))
-	print(5497+5492+587+5845+5841)
+	print((5497+5492+587+5845+5841)%1003)
 
 #               5
 #              / \
