@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 from BST import TreeNode
-from BST import insertNode
 
 # Root to Leaf Paths With Sum
 # https://www.interviewbit.com/problems/root-to-leaf-paths-with-sum/
