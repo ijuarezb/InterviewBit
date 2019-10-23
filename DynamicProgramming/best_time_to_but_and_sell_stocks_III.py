@@ -11,6 +11,10 @@ import sys
 # Note:
 # You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 #
+# Constraints:
+# 1 <= length(A) <= 7e5
+# 1 <= A[i] <= 1e7
+#
 # Example :
 #
 # Input : [1 2 1 2]
@@ -21,6 +25,13 @@ import sys
 #   Day 2 : Sell
 #   Day 3 : Buy
 #   Day 4 : Sell
+#
+# Input 2: A = [7, 2, 4, 8, 7]
+# Output 2: 6
+#
+# Explanation 2:
+#     Day 1 : Buy
+#     Day 3 : Sell
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
