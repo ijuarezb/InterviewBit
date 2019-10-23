@@ -13,7 +13,8 @@ import sys
 # Example :
 # Given array A = [2,3,1,1,4]
 #
-# The minimum number of jumps to reach the last index is 2. (Jump 1 step from index 0 to 1, then 3 steps to the last index.)
+# The minimum number of jumps to reach the last index is 2. (Jump 1 step from index 0 to 1, 
+# then 3 steps to the last index.)
 #
 # If it is not possible to reach the end index, return -1.
 #
@@ -47,6 +48,16 @@ class Solution:
                 prev_max, jumps = curr_max, jumps + 1
 
         return jumps
+
+    def canJump(self, A):
+        maxReached = 0
+
+        for i, a in enumerate(A):
+            if i > maxReached:
+                return 0
+            maxReached = max(maxReached, i + a)
+
+        return 1
 
     # O(n^2) solution, not efficient enough.
     def jump2(self, A):
