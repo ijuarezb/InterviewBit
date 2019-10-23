@@ -65,13 +65,13 @@ class Solution:
     	if len(A) == 1 and A[0] == 0: return 0
     	elif A[0] == 0: return -1
 
-    	dp = [0] + [32000] * (len(A)-1)
+    	dp = [0] + [50001] * (len(A)-1)
     	for i in range(len(A)-1):
     		for j in range(1, A[i]+1):
     			if i + j < len(A):
     				dp[i+j] = min(dp[i+j], dp[i]+1)
 
-    	return dp[-1] if dp[-1] != 32000 else -1
+    	return dp[-1] if dp[-1] != 50001 else -1
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
