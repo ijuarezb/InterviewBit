@@ -51,7 +51,7 @@ class Solution:
     def minCut2(self, A):
         if len(A) == 0: return 0
         n = len(A)
-        dp = [[8] * n for _ in range(n)]
+        dp = [[50000] * n for _ in range(n)]
 
         for j in range(n):
             for i in range(j, -1, -1):
@@ -77,13 +77,13 @@ class Solution:
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.minCut("aab"))
-    print(s.minCut2("aab"))
-    print(s.minCut("evannave"))
-    print(s.minCut2("evannave"))
-    print(s.minCut("abcbm"))
+    # print(s.minCut("aab"))
+    # print(s.minCut2("aab"))
+    # print(s.minCut("evannave"))
+    # print(s.minCut2("evannave"))
+    # print(s.minCut("abcbm"))
     print(s.minCut2("abcbm"))
-    print(s.minCut("ababb"))
-    print(s.minCut2("ababb"))
+    # print(s.minCut("ababb"))
+    # print(s.minCut2("ababb"))
     # A : "ababb" - 1
     #
