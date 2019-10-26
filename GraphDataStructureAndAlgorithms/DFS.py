@@ -4,22 +4,16 @@ import sys
 #
 # Pseudocode of Depth-first Search
 #    Set all nodes to "not visited";
-#
 #    s = new Stack();    // get a stack
-#
 #    s.push(initial node);    // push the root node into the stack
 #
-#    while ( s is not EMPTY ) do
-#    {
+#    while ( s is not EMPTY ) do {
 #       x = s.pop();         // remove the top node from the stack and start exploring its branches
-#
-#       if ( x has not been visited )   // if you are visiting the node first time
-#       {
-#          visited[x] = true;		//mark it as visited so that you do not visit it again
-#
-#          for ( every edge (x, y))    //all adjacent nodes of x will have an edge with x
-#             if ( y has not been visited )   //check if adjacent node is not already visited
-# 	       s.push(y);      
+#       if ( x has not been visited ) {    // if you are visiting the node first time
+#          visited[x] = true;		       // mark it as visited so that you do not visit it again
+#          for ( every edge (x, y))        // all adjacent nodes of x will have an edge with x
+#             if ( y has not been visited )// check if adjacent node is not already visited
+# 	             s.push(y);      
 #       }
 #    }
 #
@@ -36,10 +30,8 @@ import sys
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-#
 # Implementation of DFS in python:
 #
-
 def dfs(graph, vertex, visited=None):
     if visited is None:
         visited = set()
