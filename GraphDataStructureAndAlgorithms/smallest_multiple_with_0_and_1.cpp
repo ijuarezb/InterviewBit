@@ -37,9 +37,9 @@ string multiple(int A) {
     int tp, p, a1, a2;
 
     while (!q.empty()) {
-    	cout << "queue = "; showq(q);
-    	cout << "vis = "; showv(vis);
-    	cout << "par = "; showvp(par);
+    	// cout << "queue = "; showq(q);
+    	// cout << "vis = "; showv(vis);
+    	// cout << "par = "; showvp(par);
 
         tp = q.front();
         q.pop();
@@ -53,13 +53,15 @@ string multiple(int A) {
                 s += par[p].second;
                 p = par[p].first;
             }
+
+            // cout << s << endl;
             reverse(s.begin(), s.end());
             return s;
         }
         
         a1 = (tp * 10) % A;
         a2 = ((tp * 10) % A + 1) % A;
-        cout << "a1 = " << a1 << ", " << "a2 = " << a2 << endl;
+        // cout << "a1 = " << a1 << ", " << "a2 = " << a2 << endl;
 
         if (vis[a1] == -1) {
         	q.push(a1);
@@ -79,7 +81,6 @@ string multiple(int A) {
 // main function - 
 int main() 
 { 
-    cout << "Hello World" << endl;
-    cout << multiple(9) << endl;
+    cout << multiple(55) << endl;
     return 0; 
 } 

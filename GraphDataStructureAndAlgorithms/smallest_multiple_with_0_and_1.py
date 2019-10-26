@@ -63,34 +63,35 @@ class Solution:
         vis = [-1] * (A + 1)
         par = [(-1, '1')] * (A + 1)
         tp, p, a1, a2, s = 0, 0, 0, 0, ''
-        q.appendleft(1%A)
+        q.append(1%A)
         vis[1%A] = 1
 
         while len(q) > 0:
-            tp = q.popleft();
+            # print(q)
+            # print(vis)
+            tp = q.popleft()
             
             if tp == 0:
-                s = ''
                 s += par[0][1]
                 p = par[0][0]
 
                 while( p != -1):
                     s += par[p][1]
                     p = par[p][0]
-                    s = ''.join(reversed(s))
-
+                #print(s)
+                s = ''.join(reversed(s))
                 return s
             
             a1 = (tp * 10) % A
             a2 = ((tp * 10) % A + 1) % A
 
             if vis[a1] == -1:   
-              q.appendleft(a1)
-              vis[a1] =1
+              q.append(a1)
+              vis[a1] = 1
               par[a1] = (tp, '0')
 
             if vis[a2] == -1:   
-              q.appendleft(a2)
+              q.append(a2)
               vis[a2] = 1
               par[a2] = (tp, '1')
 
@@ -101,20 +102,20 @@ class Solution:
 
 if __name__ == "__main__":
     s = Solution()
-    print(s.multiple(2))
-    print(s.multiple(17))
-    print(s.multiple(55))
-    print(s.multiple(1))
-    print(s.multiple(9))
+    # print(s.multiple(2))
+    # print(s.multiple(17))
+    # print(s.multiple(55))
+    # print(s.multiple(1))
+    # print(s.multiple(9))
 
-    print(s.multiple2(2))
-    print(s.multiple2(17))
-    print(s.multiple2(55))
-    print(s.multiple2(1))
-    print(s.multiple2(9))
+    # print(s.multiple2(2))
+    # print(s.multiple2(17))
+    # print(s.multiple2(55))
+    # print(s.multiple2(1))
+    # # print(s.multiple2(9))
 
-    print(s.multiple3(2))
-    print(s.multiple3(17))
+    # print(s.multiple3(2))
+    # print(s.multiple3(17))
     print(s.multiple3(55))
-    print(s.multiple3(1))
-    print(s.multiple3(9))
+    # print(s.multiple3(1))
+    # print(s.multiple3(9))
