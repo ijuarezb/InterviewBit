@@ -4,9 +4,6 @@ import sys
 # Smallest Multiple With 0 and 1
 # https://www.interviewbit.com/problems/smallest-multiple-with-0-and-1/
 #
-# Time Limit Exceeded. I think task has a problem with limit for python solution.
-# TODO: Try to improve this
-#
 # You are given an integer N. You have to find smallest multiple of N which consists of
 # digits 0 and 1 only. Since this multiple could be large, return it in form of a string.
 #
@@ -67,8 +64,6 @@ class Solution:
         vis[1%A] = 1
 
         while len(q) > 0:
-            # print(q)
-            # print(vis)
             tp = q.popleft()
             
             if tp == 0:
@@ -78,7 +73,6 @@ class Solution:
                 while( p != -1):
                     s += par[p][1]
                     p = par[p][0]
-                #print(s)
                 s = ''.join(reversed(s))
                 return s
             
