@@ -165,9 +165,8 @@ class Solution:
         Key[source] = 0
         mark[source] = 1
 
-        d_keys = list(Key.keys()) # List to track d[] processed
+        d_keys = list(Key.keys())
         while Q:  # while Q not empty
-            # Getting Vertex with minimun distance:
             u = min(d_keys, key=(lambda k: Key[k]))
             print(Key, u)
             d_keys.remove(u)
