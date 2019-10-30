@@ -14,6 +14,21 @@ import sys
 # order: 1, 2 and 3. But if N = 2 and the prerequisite pairs are [1,2] and [2,1], then it is not possible for
 # you to finish all the courses.
 #
+# Input Format:
+# The first argument of input contains an integer A, representing the number of courses.
+# The second argument of input contains an integer array, B.
+# The third argument of input contains an integer array, C.
+#
+# Output Format:
+# Return a boolean value:
+#     1 : If it is possible to complete all the courses.
+#     0 : If it is not possible to complete all the courses.
+#
+# Constraints:
+# 1 <= A <= 6e4
+# 1 <= length(B) = length(C) <= 1e5
+# 1 <= B[i], C[i] <= A
+#
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 class Solution:
@@ -42,6 +57,7 @@ class Solution:
             curr = queue.popleft()
             ans += 1
             for j in paths[curr]:
+                #print("paths[curr] = ", paths[curr], "j = ", j, "ans = ", ans)
                 indegree[j] -= 1
                 if not indegree[j]:
                     queue.append(j)
