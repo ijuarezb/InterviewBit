@@ -142,7 +142,7 @@ if __name__ == '__main__':
             "e" : set(["a"])
           }
   #bfs(adjacency, "a")
-  #bfs_brady(adjacency, "a")
+  bfs_brady(adjacency, "a")
 
   g = [[-1, 3, 2],
       [2, -1, 0],
