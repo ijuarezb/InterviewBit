@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import sys
 
-
 # N max pair combinations
 # https://www.interviewbit.com/problems/n-max-pair-combinations/
 #
@@ -40,7 +39,7 @@ class Solution(object):
         heap, ans = list(), []
 
         if len(A) == 0 or len(B) == 0:
-        	return []
+        	return ans
 
         for a in A:
         	for b in B:
