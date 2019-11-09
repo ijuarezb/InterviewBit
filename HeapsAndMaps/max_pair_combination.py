@@ -37,20 +37,19 @@ class Solution(object):
 	
     def solveBruteForce(self, A, B):
         from heapq import heappop, heappush
-        heap, ans = list(), 0
+        heap, ans = list(), []
 
         if len(A) == 0 or len(B) == 0:
         	return []
 
         for a in A:
         	for b in B:
-        		heappush(heap, MaxHeap(a+b))
+        		heappush(heap, MaxHeap((a+b, (a, b))))
 
-        L = []
         for i in range(len(A)):
-        	L.append(heappop(heap))
+        	ans.append(heappop(heap)[0])
 
-        return L
+        return ans
 
     # @param A : list of integers
     # @param B : list of integers
@@ -60,12 +59,10 @@ class Solution(object):
         A.sort(reverse=True)
         B.sort(reverse=True)
 
-        heap, finished = list(), set()
+        heap, finished, ans = list(), set(), []
 
         heappush(heap, MaxHeap((A[0] + B[0], (0, 0))))
         finished.add((0, 0))
-
-        ans = []
 
         for i in range(len(A)):
             s, idx = heappop(heap)
@@ -87,7 +84,7 @@ class Solution(object):
 if __name__ == "__main__":
     s = Solution()
     print(s.solve([1, 4, 2, 3], [2, 5, 1, 6]))
-    #print(s.solveBruteForce([1, 4, 2, 3], [2, 5, 1, 6]))
+    print(s.solveBruteForce([1, 4, 2, 3], [2, 5, 1, 6]))
 
 # A : [ 3, 2, 4, 2 ]
 # B : [ 4, 3, 1, 2 ]
