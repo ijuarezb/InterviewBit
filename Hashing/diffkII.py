@@ -40,7 +40,7 @@ class Solution:
 
         for i, a in enumerate(A):
             if a in dp:
-                print(a)
+                #print(a)
                 return 1
             if B + a not in dp:
                 dp[B + a] = i
