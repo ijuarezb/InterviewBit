@@ -48,10 +48,9 @@ class Solution:
             # POP current smallest element from MIN HEAP
             # Creates NODE to load element
             a, row = heappop(heap)
-            print(a, row)
             node = Node(a)
 
-            # PUSH NODE to new consolidated sorted LinkedList
+            # PUSH NODE to new consolidated sorted LinkedList (TAIL)
             if not head:
                 head  = tail = node
             else:
