@@ -29,13 +29,12 @@ class Solution:
     # @return a list of list of integers
     def fourSum(self, A, B):
         from collections import defaultdict
-        sums, ans = list(), set()
+        dp, sums, ans = defaultdict(list), list(), set()
 
         for i in range(len(A) - 1):
             for j in range(i + 1, len(A)):
                 sums.append((A[i] + A[j], i, j))
 
-        dp = defaultdict(list)
         for s, *spair in sums:
             spair = set(spair)
             for pair in dp[B - s]:
@@ -46,9 +45,8 @@ class Solution:
         return sorted(list(ans))
 
 
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
 if __name__ == "__main__":
     s = Solution()
-    print(s.fourSum([ 23, 20, 0, 21, 3, 38, 35, -6, 2, 5, 4, 21 ], 29))
+    print(s.fourSum(A=[1, 0, -1, 0, -2, 2], B=0))
+    print(s.fourSum(A=[ 23, 20, 0, 21, 3, 38, 35, -6, 2, 5, 4, 21 ], B=29))
