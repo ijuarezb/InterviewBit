@@ -65,13 +65,13 @@ class Solution:
 
 if __name__ == '__main__':
 	s = Solution()
-	#print(s.fractionToDecimal(10,3))
-	#print(s.fractionToDecimal(1,2))
-	#print(s.fractionToDecimal(2,1))
-	#print(s.fractionToDecimal(2,3))
-	#print(s.fractionToDecimal(4,9))
+	# print(s.fractionToDecimal(10,3))
+	# print(s.fractionToDecimal(1,2))
+	# print(s.fractionToDecimal(2,1))
+	# print(s.fractionToDecimal(2,3))
+	# print(s.fractionToDecimal(4,9))
 	print(s.fractionToDecimal(4,333))
-	#print(s.fractionToDecimal(7,-6))
+	# print(s.fractionToDecimal(7,-6))
 
 
 
