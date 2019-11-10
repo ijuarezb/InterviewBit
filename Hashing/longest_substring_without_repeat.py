@@ -36,9 +36,11 @@ class  Solution():
 				sub_string.remove(st[i])
 				i += 1
 
-		return max_length, max_substr
+		return max_length
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 if __name__ == '__main__':
 	s = Solution()
 	print(s.longestSubstringWithoutRepeat('pwwke'))
+	print(s.longestSubstringWithoutRepeat('abcabcbb'))
+	print(s.longestSubstringWithoutRepeat('bbbbb'))
