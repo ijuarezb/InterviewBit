@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
-import LinkedLis
+from LinkedList import LinkedList
+from LinkedList import Node
 
 # Palindrome List
 # https://www.interviewbit.com/problems/palindrome-list/
