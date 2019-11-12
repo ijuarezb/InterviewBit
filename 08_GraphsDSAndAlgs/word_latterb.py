@@ -6,7 +6,7 @@ class QItem():
 		self.word = word 
 		self.len = len
 
-def isadjacent(a, b): 
+def is_adjacent(a, b): 
 	count = 0
 	n = len(a) 
 	for i in range(n): 
@@ -32,9 +32,9 @@ def shortestChainLen(start, target, D):
 		if curr.word == target: 
 			return curr.len
 
-		for temp in D:  
-			if isadjacent(curr.word, temp):
-				if temp not in S: 
+		for temp in D:
+			if temp not in S:  
+				if is_adjacent(curr.word, temp): 
 					item = QItem(temp, curr.len + 1)
 					Q.append(item) 
 					S.add(temp)
@@ -53,6 +53,3 @@ if __name__ == '__main__':
     B = "clgko"
     C = [ "cljkh", "baxbg", "bajbm", "bljkm", "baxug", "cljko", "bajbg", "clnko", "clgko", "bljkh", "bljbm" ]
     print(shortestChainLen(A, B, C))
-
-		
-# This code is contributed by Divyanshu Mehta		 

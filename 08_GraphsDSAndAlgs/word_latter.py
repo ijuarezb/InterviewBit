@@ -97,6 +97,7 @@ class Solution:
 
         queue.append((beginWord, 1))
         leng = len(beginWord)
+        found_words = set()
 
         while len(queue) > 0:
             word, dist = queue.popleft()
@@ -105,11 +106,13 @@ class Solution:
                 return dist
 
             for n in wordList:
-                if sum(n[i] != word[i] for i in range(leng)) == 1:
-                    node = trie.findWord(n)
-                    if node and not node.marker:
-                        node.marker = True
-                        queue.append((n, dist + 1))
+                if n not in found_words:
+                    if sum(n[i] != word[i] for i in range(leng)) == 1:
+                        node = trie.findWord(n)
+                        if node and not node.marker:
+                            node.marker = True
+                            queue.append((n, dist + 1))
+                            found_words.add(n)
 
         return 0
 
