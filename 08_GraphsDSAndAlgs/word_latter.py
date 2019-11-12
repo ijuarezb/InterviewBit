@@ -59,6 +59,15 @@ class Solution:
                 tmp = tmp.chars[char]
             return tmp
 
+    def set_chars_max(self, n, words):
+        D = dict()
+        for i in range(n):
+            S = set()
+            for word in words:
+                S.add(word[i])
+            D[i] = S
+        return D
+
     def ladderLength(self, beginWord, endWord, wordList):
         from collections import deque
         from string import ascii_lowercase
@@ -66,6 +75,9 @@ class Solution:
         trie, queue = Solution.TrieNode(), deque()
         for word in wordList:
             trie.insertWord(word)
+
+        D = self.set_chars_max(len(beginWord), wordList)
+        found_words = set()
 
         queue.append((beginWord, 1))
         while len(queue) > 0:
@@ -76,16 +88,19 @@ class Solution:
                 return dist
 
             for i in range(len(word)):
-                for c in tmp.chars:
+                for c in D[i]:
                     if word[i] == c:
                         continue
                     new_word = word[:i] + c + word[i + 1:]
 
+                    if new_word in found_words:
+                        continue
+
                     node = trie.findWord(new_word)
-                    print(new_word, queue, node)
-                    if node:
+                    if node and not node.marker:
                         node.marker = True
                         queue.append((new_word, dist + 1))
+                        found_words.add(new_word)
 
         return 0
 

@@ -16,6 +16,16 @@ def is_adjacent(a, b):
 			break
 	return True if count == 1 else False
 
+def set_chars_max(n, words):
+	for i in range(n):
+		S = set()
+		for word in words:
+			D[i] = S.add(word[i])
+	return D
+
+def get_chars_at_index(i, D):
+	return D[i]
+
 def shortestChainLen(start, target, D): 
 	from collections import deque 
 	Q, S, item = deque(), set(), QItem(start, 1)
