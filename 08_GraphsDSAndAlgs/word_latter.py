@@ -114,17 +114,12 @@ class Solution:
         return 0
 
     def isadjacent(self, a, b): 
-        count = 0
-        n = len(a) 
-
-        # Iterate through all characters and return false 
-        # if there are more than one mismatching characters 
+        count, n = 0, len(a)
         for i in range(n): 
             if a[i] != b[i]: 
                 count += 1
             if count > 1: 
                 break
-
         return True if count == 1 else False
 
     def solve(self, beginWord, endWord, wordList):
@@ -136,16 +131,12 @@ class Solution:
         if endWord not in wordList:
             return 0
             
-        # wordList.append(endWord)
-        queue = deque()
+        queue, found_words, leng = deque(), set(), len(beginWord)
         queue.append([beginWord, 1])
-        leng = len(beginWord)
-        found_words = set()
     
         while queue:
             word, length = queue.popleft()
             if word == endWord:
-                print(found_words)
                 return length
             for n in wordList:
                 #if sum(n[i] != word[i] for i in range(leng)) == 1:

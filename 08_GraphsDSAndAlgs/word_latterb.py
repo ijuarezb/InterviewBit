@@ -16,17 +16,9 @@ def isadjacent(a, b):
 			break
 	return True if count == 1 else False
 
-def find_adjacent(word, words): 
-	count = 0
-	for i in range(len(n)):
-		if word[0:i:] + word[i+1::]	in [(iw, w[0:i:] + w[i+1::]) for iw, w in enumerate(words)]:
-			return w
-	return word
-
 def shortestChainLen(start, target, D): 
 	from collections import deque 
 	Q, S, item = deque(), set(), QItem(start, 1)
-	Q.append(item)
 
 	if start in D:
 		D.remove(start)
@@ -34,6 +26,7 @@ def shortestChainLen(start, target, D):
 	if target not in D:
 		return 0
 
+	Q.append(item)
 	while Q: 
 		curr = Q.popleft() 
 		if curr.word == target: 
