@@ -92,6 +92,7 @@ class Solution:
                     if word[i] == c:
                         continue
                     new_word = word[:i] + c + word[i + 1:]
+                    print(word)
 
                     if new_word in found_words:
                         continue

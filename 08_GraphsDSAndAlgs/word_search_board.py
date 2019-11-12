@@ -74,6 +74,8 @@ if __name__ == "__main__":
     ]
     s = Solution()
     print(s.exist(A, 'BCDCB'))
+    print(s.exist(['aa'], 'aaa'))
+    print(s.exist(['b', 'a', 'b', 'b', 'a'], 'aba'))
 
     # A = [ “FEDCBECD”, “FABBGACG”, “CDEDGAEC”, “BFFEGGBA”, “FCEEAFDA”, “AGFADEAC”, “ADGDCBAA”, “EAABDDFF” ]
     # B = "BCDCB"
