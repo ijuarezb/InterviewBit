@@ -64,24 +64,26 @@ class Solution:
         from string import ascii_lowercase
 
         trie, queue = Solution.TrieNode(), deque()
-        for i, word in enumerate(wordList):
+        for word in wordList:
             trie.insertWord(word)
 
         queue.append((beginWord, 1))
         while len(queue) > 0:
             word, dist = queue.popleft()
+            tmp = trie
 
             if word == endWord:
                 return dist
 
             for i in range(len(word)):
-                for c in ascii_lowercase:
+                for c in tmp.chars:
                     if word[i] == c:
                         continue
                     new_word = word[:i] + c + word[i + 1:]
 
                     node = trie.findWord(new_word)
-                    if node and not node.marker:
+                    print(new_word, queue, node)
+                    if node:
                         node.marker = True
                         queue.append((new_word, dist + 1))
 
@@ -92,7 +94,7 @@ class Solution:
         from string import ascii_lowercase
 
         trie, queue = Solution.TrieNode(), deque()
-        for i, word in enumerate(wordList):
+        for word in wordList:
             trie.insertWord(word)
 
         queue.append((beginWord, 1))
