@@ -92,7 +92,6 @@ class Solution:
                     if word[i] == c:
                         continue
                     new_word = word[:i] + c + word[i + 1:]
-                    print(word)
 
                     if new_word in found_words:
                         continue
@@ -143,6 +142,20 @@ class Solution:
                 break
         return True if count == 1 else False
 
+    def get_adj_matrix(self, beginWord, wordList):
+
+        adj = {wu:set() for wu in wordList + [beginWord]}
+        for i, wu in enumerate(wordList):
+            for wv in wordList[:i] + wordList[i+1:]:
+                if self.isadjacent(wu, wv):
+                    adj[wu].add(wv)
+
+        for wv in wordList:
+            if self.isadjacent(beginWord, wv):
+                adj[beginWord].add(wv)
+
+        return adj
+
     def solve(self, beginWord, endWord, wordList):
         from collections import deque
         
@@ -154,15 +167,17 @@ class Solution:
             
         queue, found_words, leng = deque(), set(), len(beginWord)
         queue.append([beginWord, 1])
+        adj_matrix = self.get_adj_matrix(beginWord, wordList)
     
         while queue:
             word, length = queue.popleft()
             if word == endWord:
                 return length
-            for n in wordList:
+            #for n in wordList:
+            for n in adj_matrix[word]:
                 #if sum(n[i] != word[i] for i in range(leng)) == 1:
                 if n not in found_words:
-                    if self.isadjacent(n, word):
+                    #if self.isadjacent(n, word):
                         queue.append([n, length+1])
                         found_words.add(n)
 
@@ -209,7 +224,7 @@ if __name__ == '__main__':
         "xfggqbwpesgwhoruufpy", "xfgfqcwpesgwhfcuufpy", "xqjucbkmligwhonwkfpy"]
     # print(s.ladderLength(A, B, C))
     # print(s.ladderLength2(A, B, C))
-    # print(s.solve(A, B, C))
+    print(s.solve(A, B, C))
 
 # This is a classic shortest path problem.
 
