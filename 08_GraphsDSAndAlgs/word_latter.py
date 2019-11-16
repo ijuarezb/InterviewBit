@@ -59,36 +59,27 @@ class Solution:
                 tmp = tmp.chars[char]
             return tmp
 
-    def set_chars_max(self, n, words):
-        D = dict()
-        for i in range(n):
-            S = set()
-            for word in words:
-                S.add(word[i])
-            D[i] = S
-        return D
-
+    # ladderLength, is solving the problem, its Time Complexity met constraints.  Good!!!
     def ladderLength(self, beginWord, endWord, wordList):
         from collections import deque
         from string import ascii_lowercase
 
-        trie, queue = Solution.TrieNode(), deque()
+        trie, queue, found_words = Solution.TrieNode(), deque(), set()
+
         for word in wordList:
             trie.insertWord(word)
-
-        D = self.set_chars_max(len(beginWord), wordList)
-        found_words = set()
+        trie.insertWord(beginWord)
 
         queue.append((beginWord, 1))
         while len(queue) > 0:
             word, dist = queue.popleft()
-            tmp = trie
+            tmp = trie      # <== Change1: adding tmp to look for words in Trie.
 
             if word == endWord:
                 return dist
 
             for i in range(len(word)):
-                for c in D[i]:
+                for c in tmp.chars:   # <== Change2: iteration over the Trie to match words
                     if word[i] == c:
                         continue
                     new_word = word[:i] + c + word[i + 1:]
@@ -102,8 +93,14 @@ class Solution:
                         queue.append((new_word, dist + 1))
                         found_words.add(new_word)
 
+                if word[i] in tmp.chars:    # <== Change3: once a word[i] has a match in Trie
+                    tmp = tmp.chars[word[i]]             # move to the next Trie level or branch 
+
         return 0
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+    # ladderLength2, is solving the problem, but Time Complexity is too high.
     def ladderLength2(self, beginWord, endWord, wordList):
         from collections import deque
         from string import ascii_lowercase
@@ -111,6 +108,7 @@ class Solution:
         trie, queue = Solution.TrieNode(), deque()
         for word in wordList:
             trie.insertWord(word)
+        trie.insertWord(beginWord)
 
         queue.append((beginWord, 1))
         leng = len(beginWord)
@@ -142,20 +140,21 @@ class Solution:
                 break
         return True if count == 1 else False
 
-    def get_adj_matrix(self, beginWord, wordList):
+    # def get_adj_matrix(self, beginWord, wordList):
 
-        adj = {wu:set() for wu in wordList + [beginWord]}
-        for i, wu in enumerate(wordList):
-            for wv in wordList[:i] + wordList[i+1:]:
-                if self.isadjacent(wu, wv):
-                    adj[wu].add(wv)
+    #     adj = {wu:set() for wu in wordList + [beginWord]}
+    #     for i, wu in enumerate(wordList):
+    #         for wv in wordList[:i] + wordList[i+1:]:
+    #             if self.isadjacent(wu, wv):
+    #                 adj[wu].add(wv)
 
-        for wv in wordList:
-            if self.isadjacent(beginWord, wv):
-                adj[beginWord].add(wv)
+    #     for wv in wordList:
+    #         if self.isadjacent(beginWord, wv):
+    #             adj[beginWord].add(wv)
 
-        return adj
+    #     return adj
 
+    # solve, is solving the problem, but Time Complexity is too high.
     def solve(self, beginWord, endWord, wordList):
         from collections import deque
         
@@ -167,19 +166,20 @@ class Solution:
             
         queue, found_words, leng = deque(), set(), len(beginWord)
         queue.append([beginWord, 1])
-        adj_matrix = self.get_adj_matrix(beginWord, wordList)
+        # adj_matrix = self.get_adj_matrix(beginWord, wordList)
     
         while queue:
             word, length = queue.popleft()
             if word == endWord:
                 return length
-            #for n in wordList:
-            for n in adj_matrix[word]:
+            for i, n in enumerate(wordList):
+            # for n in adj_matrix[word]:
                 #if sum(n[i] != word[i] for i in range(leng)) == 1:
                 if n not in found_words:
-                    #if self.isadjacent(n, word):
+                    if self.isadjacent(n, word):
                         queue.append([n, length+1])
                         found_words.add(n)
+                        #wordList = wordList[:i] + wordList[i+1:]
 
         return 0
 
@@ -196,9 +196,9 @@ if __name__ == '__main__':
     start = "hit"
     end = "cog"
     words = ["hot","dot","dog","lot","log"]
-    # print(s.ladderLength(start, end, words))
-    # print(s.ladderLength2(start, end, words))
-    # print(s.solve(start, end, words))
+    print(s.ladderLength(start, end, words))
+    print(s.ladderLength2(start, end, words))
+    print(s.solve(start, end, words))
 
     A = "drzugcvdxisdvbsvnpjt"
     B = "mqvuzbkqligdhppwkfsm"
@@ -222,8 +222,8 @@ if __name__ == '__main__':
         "qomtiysdtnkdnmsfupgo", "xqjucbkmligwhoswkfpm", "xqjuzbkmligdhoswkfpm", "xfguqbwpesgwhonuufpy", "qhpthcmrenkdtmsfuegy", \
         "ddmtiyvdmisdvbsgntgt", "xfggqbwpesgwhonuufpy", "qomtiysdmnkdnmslupgt", "xhgtqcmreskwxmauuepy", "xqjuzbkqligdhoswkfsm", \
         "xfggqbwpesgwhoruufpy", "xfgfqcwpesgwhfcuufpy", "xqjucbkmligwhonwkfpy"]
-    # print(s.ladderLength(A, B, C))
-    # print(s.ladderLength2(A, B, C))
+    print(s.ladderLength(A, B, C))
+    print(s.ladderLength2(A, B, C))
     print(s.solve(A, B, C))
 
 # This is a classic shortest path problem.
