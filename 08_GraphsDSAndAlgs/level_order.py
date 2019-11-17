@@ -50,7 +50,6 @@ class Solution:
                 lst.append([])
             lst[lvl].append(el)
 
-
         queue, ans = deque(), list()
 
         if A:
