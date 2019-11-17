@@ -52,12 +52,12 @@ class Solution:
         return False
 
 
-    # @param A : integer
-    # @param B : integer
-    # @param C : integer
-    # @param D : integer
-    # @param E : list of integers
-    # @param F : list of integers
+    # @param A : integer  # x, max rectangle x (goal)
+    # @param B : integer  # y, max rectangle y (gaal)
+    # @param C : integer  # N, Number of circles
+    # @param D : integer  # R, Radius of circles
+    # @param E : list of integers # Nx
+    # @param F : list of integers # Ny
     # @return a strings
     def solve(self, A, B, C, D, E, F):
         visited = [[False] * (A + 1) for _ in range(B+1)]
@@ -68,4 +68,4 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
     print(s.solve(2, 3, 1, 1, [2], [3]))
-    print(s.solve(41, 67, 5, 0, [5, 17, 16, 12, 0, 40], [5, 52, 61, 61, 25, 31]))
+    print(s.solve(41, 67, 6, 0, [5, 17, 16, 12, 0, 40], [5, 52, 61, 61, 25, 31]))
