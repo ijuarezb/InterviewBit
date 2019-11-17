@@ -140,19 +140,19 @@ class Solution:
                 break
         return True if count == 1 else False
 
-    # def get_adj_matrix(self, beginWord, wordList):
+    def get_adj_matrix(self, beginWord, wordList):
 
-    #     adj = {wu:set() for wu in wordList + [beginWord]}
-    #     for i, wu in enumerate(wordList):
-    #         for wv in wordList[:i] + wordList[i+1:]:
-    #             if self.isadjacent(wu, wv):
-    #                 adj[wu].add(wv)
+        adj = {wu:set() for wu in wordList + [beginWord]}
+        for i, wu in enumerate(wordList):
+            for wv in wordList[:i] + wordList[i+1:]:
+                if self.isadjacent(wu, wv):
+                    adj[wu].add(wv)
 
-    #     for wv in wordList:
-    #         if self.isadjacent(beginWord, wv):
-    #             adj[beginWord].add(wv)
+        for wv in wordList:
+            if self.isadjacent(beginWord, wv):
+                adj[beginWord].add(wv)
 
-    #     return adj
+        return adj
 
     # solve, is solving the problem, but Time Complexity is too high.
     def solve(self, beginWord, endWord, wordList):

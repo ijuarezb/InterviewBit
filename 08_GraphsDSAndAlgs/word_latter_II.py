@@ -83,7 +83,6 @@ class Solution:
         while len(queue) > 0:
 
             idx, dist, word = queue.popleft()
-
             tmp = trie
 
             for i in range(len(word)):
@@ -100,8 +99,8 @@ class Solution:
                         if node.dist > dist:
                             ans[node.idx].append(idx)
 
-                if word[i] in tmp.chars:
-                    tmp = tmp.chars[word[i]]
+                    if c in tmp.chars:
+                        tmp = tmp.chars[c]
 
         node = trie.findWord(endWord)
 
