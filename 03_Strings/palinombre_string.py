@@ -83,6 +83,32 @@ class Solution(object):
 		A = pattern.sub('', A)
 		return self.isPalindrome(A.lower())
 
+    def isPalindrome(self, A):
+        s = []
+        
+        if len(A) == 0: return 1
+        
+        for c in A:
+            if 'A' <= c <= 'Z' or 'a' <= c <= 'z' or '0' <= c <= '9':
+                if 'A' <= c <= 'Z':
+                    s.append(c.lower())
+                else:
+                    s.append(c)
+        
+        st = ''.join(s)
+        
+        if len(st) <= 1:
+            return 1
+        if len(st) == 2 and st[0] == st[1]:
+            return 1
+            
+        l = len(st) // 2
+        for i in range(l):
+            if st[i] != st[-1-i]:
+                return 0
+                
+        return 1
+
 if __name__ == '__main__':
 
 	#num = '00000010100101000001111010011100'
