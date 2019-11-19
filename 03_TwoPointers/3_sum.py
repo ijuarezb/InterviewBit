@@ -4,8 +4,8 @@ import sys
 # 3 Sum
 # https://www.interviewbit.com/problems/3-sum/
 #
-# Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target.
-# Return the sum of the three integers.
+# Given an array S of n integers, find three integers in S such that the sum is closest to a 
+# given number, target. Return the sum of the three integers.
 #
 # Assume that there will only be one solution
 #
@@ -30,6 +30,7 @@ class Solution:
             start, end = i + 1, len(A) - 1
             while start < end:
                 b, c = A[start], A[end]
+                print(a, b, c)
 
                 if abs(B - (a + b + c)) < minn:
                     minn = abs(B - (a + b + c))
