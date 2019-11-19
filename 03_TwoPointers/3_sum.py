@@ -30,7 +30,7 @@ class Solution:
             start, end = i + 1, len(A) - 1
             while start < end:
                 b, c = A[start], A[end]
-                print(a, b, c)
+                #print(a, b, c)
 
                 if abs(B - (a + b + c)) < minn:
                     minn = abs(B - (a + b + c))
