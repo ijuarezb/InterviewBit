@@ -89,5 +89,4 @@ if __name__ == "__main__":
     import time
     s = Solution()
     A = [0, 0, 0, -1, 0, 1, 2, -1, -4]
-    print(len(A))
     print(s.threeSum(A))
