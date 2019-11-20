@@ -17,6 +17,7 @@ class Solution:
     # @param A : integer
     # @return an integer
     
+    # n^1/2 solution
     def isPrime(self, n):
     # Corner case 
         if n <= 1: 
@@ -34,5 +35,17 @@ class Solution:
             i += 6
   
         return 1
+
+	# O(n) solution
+    def isPrime(n):   
+	    # Corner case 
+	    if n <= 1: 
+	        return 0
+	  
+	    # Check from 2 to n-1 
+	    for i in range(2, n): 
+	        if n % i == 0: 
+	            return 0 
+	    return 1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
