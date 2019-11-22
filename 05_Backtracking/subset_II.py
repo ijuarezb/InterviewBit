@@ -38,6 +38,9 @@ class Solution:
             if i > left and A[i] == A[i - 1]:
                 continue
 
+            # if A[i] in tmp and A[i] != A[i - 1]:
+            #     continue
+
             tmp.append(A[i])
             ans.extend(self._subsets(A, tmp, i + 1))
             tmp.pop()
