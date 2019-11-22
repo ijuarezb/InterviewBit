@@ -32,7 +32,7 @@ class Solution(object):
 
     def _combinationSum(self, A, B, tmp, sum_tmp, left):
 
-        print(tmp, sum_tmp, left)
+        #print(tmp, sum_tmp, left)
 
         if sum_tmp == B:
             return [tmp[:]]
