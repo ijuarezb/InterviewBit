@@ -50,6 +50,16 @@ class Solution:
         A.sort()
         return self._subsets(A, [], 0)
 
+    def _subsetsT(self, A, tmp, left):
+        result = [tmp[:]]
+
+        for i in range(left, len(A)):
+            tmp.append(A[i])
+            result.extend(self._subsetsT(A, tmp, i+1))
+            tmp.pop()
+
+        return result
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
