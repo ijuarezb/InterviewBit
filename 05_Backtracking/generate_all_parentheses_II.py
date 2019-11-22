@@ -5,7 +5,8 @@ import sys
 # Generate all Parentheses II
 # https://www.interviewbit.com/problems/generate-all-parentheses-ii/
 #
-# Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses of length 2*n.
+# Given n pairs of parentheses, write a function to generate all combinations of well-formed 
+# parentheses of length 2*n.
 #
 # For example, given n = 3, a solution set is:
 #
