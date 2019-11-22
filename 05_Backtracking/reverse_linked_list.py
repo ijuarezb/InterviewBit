@@ -56,6 +56,17 @@ class Solution:
         current_node.next = prev
         return self.reverseListRecursion(next_node, current_node)
 
+    def reverseListRecursionT(self, A, prev):
+        current_node = A
+
+        if current_node.next == None:
+            current_node.next = prev
+            self.head = current_node
+            return self.head
+
+        next_node = current_node.next
+        current_node.next = prev
+        return self.reverseListRecursionT(next_node, current_node)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -73,5 +84,5 @@ if __name__ == "__main__":
     LL.delete_node_index(4)
     print("the Lenght of LL is {}".format(LL.get_count()))
     LL.print_list()
-    LL.head = s.reverseListRecursion(LL.head, None)
+    LL.head = s.reverseListRecursionT(LL.head, None)
     LL.print_list()
