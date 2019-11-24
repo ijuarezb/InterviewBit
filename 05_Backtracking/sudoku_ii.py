@@ -63,7 +63,6 @@ def check_location_is_safe(arr,row,col,num):
 # all unassigned locations in such a way to meet the requirements 
 # for Sudoku solution (non-duplication across rows, columns, and boxes) 
 def solve_sudoku(arr): 
-	
 	# 'l' is a list variable that keeps the record of row and col in find_empty_location Function	 
 	l=[0,0] 
 	
@@ -77,17 +76,13 @@ def solve_sudoku(arr):
 	
 	# consider digits 1 to 9 
 	for num in range(1,10): 
-		
 		# if looks promising 
 		if(check_location_is_safe(arr,row,col,num)): 
-			
 			# make tentative assignment 
 			arr[row][col]=num 
-
 			# return, if success, ya! 
 			if(solve_sudoku(arr)): 
 				return True
-
 			# failure, unmake & try again 
 			arr[row][col] = 0
 			
@@ -96,10 +91,8 @@ def solve_sudoku(arr):
 
 # Driver main function to test above functions 
 if __name__=="__main__": 
-	
 	# creating a 2D array for the grid 
 	grid=[[0 for x in range(9)]for y in range(9)] 
-	
 	# assigning values to the grid 
 	grid=[[3,0,6,5,0,8,4,0,0], 
 		[5,2,0,0,0,0,0,0,0], 
