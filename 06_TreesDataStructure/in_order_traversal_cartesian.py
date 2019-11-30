@@ -41,7 +41,7 @@ class Solution:
         import operator
         max_index, max_value = max(enumerate(A), key=operator.itemgetter(1))
         #d_keys = list(d.keys())
-        #u = min(d_keys, key=(lambda k: d[k]))
+        #u = max(d_keys, key=(lambda k: d[k]))
 
         root = TreeNode(max_value)
         root.left = self.buildTree(A[:max_index])
