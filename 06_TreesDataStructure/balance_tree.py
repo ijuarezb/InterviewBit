@@ -56,11 +56,11 @@ class Solution:
 
         return isBalanced, max(heightLeft, heightRight) + 1
 
-    def get_level(self, head):
-        if head == None:
-            return 0
-        else:
-            return max(self.get_level(head.left), self.get_level(head.right)) + 1
+    # def get_level(self, head):
+    #     if head == None:
+    #         return 0
+    #     else:
+    #         return max(self.get_level(head.left), self.get_level(head.right)) + 1
 
     # @param A : root node of tree
     # @return an integer
