@@ -59,3 +59,11 @@ if __name__ == '__main__':
     print()
     postOrderTraversal(t)
     print()
+
+    t2 = s.buildTree(inorder=[1, 2, 3, 9, 11, 13, 17, 25, 57, 90], postorder=[1, 3, 9, 2, 17, 25, 90, 57, 13, 11])
+    inOrderTraversal(t2)
+    print()
+    preOrderTraversal(t2)
+    print()
+    postOrderTraversal(t2)
+    print()
