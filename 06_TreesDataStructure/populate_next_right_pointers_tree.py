@@ -109,6 +109,44 @@ class Solution:
             curr = first_in_row
             prev = first_in_row = None
 
+    # Connects Nodes in the same level, to the RIGHT!!! Successful according with LeeCode!!!
+    # Best than 100% of submissions for both: Speed and Memory Usage
+    def connect(self, tree):
+        """
+        :type tree: Node
+        :rtype: Node
+        """
+        if tree is None:
+            return
+
+        queue = []
+        queue.append((tree, 0))
+        levels = self.get_level(tree)
+        level_next_ptr = [None for _ in range(levels)]
+        next_ptrs = [None for _ in range(levels)]
+
+        while len(queue) > 0:
+            n = queue.pop(0)
+            if n:
+
+                n[0].next = None
+                if level_next_ptr[n[1]]:
+                    level_next_ptr[n[1]].next = n[0]
+                else:
+                    next_ptrs[n[1]] = n[0]
+                level_next_ptr[n[1]] = n[0]
+
+                if n[0].left: queue.append((n[0].left, n[1] + 1))
+                if n[0].right: queue.append((n[0].right, n[1] + 1))
+
+        return tree
+    
+    def get_level(self, head):
+        if head == None:
+            return 0
+        else:
+            return max(self.get_level(head.left), self.get_level(head.right)) + 1
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == '__main__':
