@@ -109,8 +109,9 @@ class Solution:
             curr = first_in_row
             prev = first_in_row = None
 
-    # Connects Nodes in the same level, to the RIGHT!!! Successful according with LeeCode!!!
-    # Best than 100% of submissions for both: Speed and Memory Usage
+    # Connects Nodes in the same level, to the RIGHT!!!
+    # Successful according with LeeCode!!!
+    # Comment: Good Speed and Memory Usage
     def connect(self, tree):
         """
         :type tree: Node
