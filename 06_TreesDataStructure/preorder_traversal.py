@@ -51,3 +51,15 @@ class Solution:
         return ans
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+if __name__ == '__main__':
+    # Input DATA to practice: 11 2 9 13 57 25 17 1 90 3
+    r = TreeNode(int(sys.argv[1]))
+    for arg in range(2, len(sys.argv), 1):
+        insertNode(r, TreeNode(int(sys.argv[arg])))
+
+    s = Solution()
+    L = s.preorderTraversal(r)
+    print("Pre Order Traversal: {}".format(L))
