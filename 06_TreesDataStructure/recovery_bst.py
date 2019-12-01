@@ -61,6 +61,15 @@ class Solution(object):
     def recoverTree(self, A):
         pfs = [None, None, None]
         self._inorder(A, pfs)
+        print([pfs[1].val, pfs[2].val])
         return sorted([pfs[1].val, pfs[2].val])
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+if __name__ == '__main__':
+    r = TreeNode(3)
+    r.left = TreeNode(1)
+    r.right = TreeNode(2)
+
+    s = Solution()
+    print(s.recoverTree(r))
