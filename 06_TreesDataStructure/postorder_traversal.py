@@ -34,7 +34,6 @@ class Solution:
     # @param A : root node of tree
     # @return a list of integers
     def postorderTraversal(self, A):
-
         ans, stack = list(), list()
 
         if A:
@@ -57,4 +56,34 @@ class Solution:
 
         return ans
 
+    def postorderTraversal(self, A):
+        stack, ans = list(), list()
+        i = 0
+
+        if A:
+            stack.append(A)
+
+        while stack:
+            node = stack[-1]
+            if not node.left or hasattr(node.left, 'visitedp'):
+                if not node.right or hasattr(node.right, 'visitedp'):
+                    ans.append(stack.pop().val)
+                    node.visitedp = True
+                else:
+                    stack.append(node.right)
+            else:
+                stack.append(node.left)
+
+        return ans
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+if __name__ == '__main__':
+    # Input DATA to practice: 11 2 9 13 57 25 17 1 90 3
+    r = TreeNode(int(sys.argv[1]))
+    for arg in range(2, len(sys.argv), 1):
+        insertNode(r, TreeNode(int(sys.argv[arg])))
+
+    s = Solution()
+    L = s.postorderTraversal(r)
+    print("Post Order Traversal: {}".format(L))
