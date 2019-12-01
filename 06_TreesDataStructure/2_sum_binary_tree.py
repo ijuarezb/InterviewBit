@@ -7,15 +7,15 @@ from BST import insertNode
 # https://www.interviewbit.com/problems/2sum-binary-tree/
 #
 # Given a binary search tree T, where each node contains a positive integer, and an integer K,
-# you have to find whether or not there exist two different nodes A and B such that A.value + B.value = K.
+# you have to find whether or not there exist two different nodes A and B such that 
+# A.value + B.value = K.
 #
 # Return 1 to denote that two such nodes exist. Return 0, otherwise.
 #
-# Notes
-#
-# Your solution should run in linear time and not take memory more than O(height of T).
+# Notes:
+# 1. Your solution should run in linear time and not take memory more than O(height of T).
 # TODO: IMPROVE MEMORY COMPLEXITY
-# Assume all values in BST are distinct.
+# 2. Assume all values in BST are distinct.
 # Example :
 #
 # Input 1:
