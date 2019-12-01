@@ -43,7 +43,7 @@ class Solution:
             if not node.left or hasattr(node.left, 'visited'):
                 node.visited = True
                 ans.append(stack.pop().val)
-
+                
                 if node.right:
                     stack.append(node.right)
             else:
@@ -60,7 +60,6 @@ class Solution:
         while stack:
             node = stack[-1]
             ans.append(stack.pop().val)
-
             if node.right:
                 stack.append(node.right)
             if node.left:
