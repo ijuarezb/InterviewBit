@@ -19,23 +19,19 @@ from BST import insertNode
 # Example :
 #
 # Input 1:
-#
 # T :       10
 #          / \
 #         9   20
 #
 # K = 19
-#
 # Return: 1
 #
 # Input 2:
-#
 # T:        10
 #          / \
 #         9   20
 #
 # K = 40
-#
 # Return: 0
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
