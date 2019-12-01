@@ -56,7 +56,7 @@ class Solution:
 
         return ans
 
-    def postorderTraversal(self, A):
+    def postorderTraversalrevA(self, A):
         stack, ans = list(), list()
         i = 0
 
