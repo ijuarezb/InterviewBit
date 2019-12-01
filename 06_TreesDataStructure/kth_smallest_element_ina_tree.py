@@ -69,18 +69,16 @@ class Solution:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == '__main__':
+    # A = [11 2 9 13 57 25 17 1 90 3]; B = 5; Answer = 11
 
     kth = int(sys.argv[1])
     r = TreeNode(int(sys.argv[2]))
     for arg in range(3, len(sys.argv), 1):
     	insertNode(r, TreeNode(int(sys.argv[arg])))
 
-    # Print inoder traversal of the BST 
     s = Solution()
     print("The Kth:{} smallest element in tree is: {}".format(kth, s.kthsmallestIJB(r, kth)))
-    # L = s.inorderTraversal(r)
-    # print(L)
-    # L = s.preorderTraversal(r)
-    # print(L)
-    # L = s.postorderTraversal(r)
-    # print(L)
+
+
+
+
