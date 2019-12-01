@@ -70,7 +70,6 @@ class Solution:
 
     def postorderTraversal(self, A):
         stack, ans = list(), list()
-        i = 0
 
         if A:
             stack.append(A)
