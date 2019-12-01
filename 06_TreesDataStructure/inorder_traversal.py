@@ -2,7 +2,6 @@
 import sys
 from BST import TreeNode
 from BST import insertNode
-from BST import inOrderTraversal
 
 # Inorder Traversal
 # https://www.interviewbit.com/problems/inorder-traversal/
@@ -89,54 +88,14 @@ class Solution:
 
         return ans
 
-    def connect_next_preorder(self, A):
-        stack, ans = list(), list()
-        layer, upper_limit = 0, 0
-        i, j = 0, 0
-        tail = None
-
-        if A:
-            stack.append(A)
-        else:
-            return None
-
-        while stack:
-            node = stack[-1]
-            node.next = None
-            val = stack.pop().val
-            ans.append(val)
-
-            if i > upper_limit:
-                layer += 1
-                upper_limit += pow(2, layer)
-                tail = node
-                j = 1
-            else:
-                if j > 0:
-                    tail.next = node
-                    tail = node
-            i += 1
-
-            if node.right:
-                stack.append(node.right)
-            if node.left: 
-                stack.append(node.left)
-
-        #return ans
-
-        #print(ans)
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == '__main__':
-
+    # Input DATA to practice: 11 2 9 13 57 25 17 1 90 3
     r = TreeNode(int(sys.argv[1]))
     for arg in range(2, len(sys.argv), 1):
     	insertNode(r, TreeNode(int(sys.argv[arg])))
 
-    # Input DATA to practice: 11 2 9 13 57 25 17 1 90 3
-
-    # Print inoder traversal of the BST 
     s = Solution()
     L = s.inorderTraversal(r)
     print("In Order Traversal: {}".format(L))
@@ -144,4 +103,3 @@ if __name__ == '__main__':
     print("Pre Order Traversal: {}".format(L))
     L = s.postorderTraversal(r)
     print("Post Order Traversal: {}".format(L))
-    s.connect_next_preorder(r)
