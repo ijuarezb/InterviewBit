@@ -10,6 +10,8 @@ import sys
 # to the given value. If there is such a triplet present in array, then print the triplet and 
 # return true. Else return false. For example, if the given array is {12, 3, 4, 1, 6, 9} 
 # and given sum is 24, then there is a triplet (12, 3 and 9) present in array whose sum is 24.
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
 # Python3 program to find a triplet using Hashing 
@@ -28,11 +30,30 @@ def find3Numbers(A, sum):
 	
 	return False
 
+def ThreeSum(A, sum):
+	result = []
+	for i in range(len(A)-1): 
+		s = set() 
+		curr_sum = sum - A[i] 
+		for j in range(i + 1, len(A)): 
+			if (curr_sum - A[j]) in s: 
+				t = sorted([A[i], A[j], curr_sum-A[j]])
+				if t not in result: 
+					result.append(t)
+			s.add(A[j]) 
+	
+	return result
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
 # Driver program to test above function 
 if __name__ == '__main__':
 	A = [1, 4, 45, 6, 10, 8] 
 	sum = 22
-	find3Numbers(A, sum) 
+	print(ThreeSum(A, sum))
+
+	nums = [-1, 0, 1, 2, -1, -4]
+	print(ThreeSum(nums, 0))
 
 
 
