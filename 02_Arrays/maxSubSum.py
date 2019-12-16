@@ -57,3 +57,7 @@ if __name__ == '__main__':
     a = [-13, -3, -25, -20, -3, -16, -23, -12, -5, -22, -15, -4, -7] 
     print("Maximum contiguous sum is", maxSubArraySum(a,len(a)))
     print("Maximum contiguous sum is", maxSubArray(a))
+
+    A = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+    print("Maximum contiguous sum is", maxSubArraySum(A,len(A)))
+    print("Maximum contiguous sum is", maxSubArray(A))
