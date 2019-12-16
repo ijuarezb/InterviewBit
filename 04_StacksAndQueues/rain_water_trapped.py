@@ -35,8 +35,25 @@ class Solution:
 
         return ans
 
+    def trap_st(self, height):
+        ans, current = 0, 0
+        st = list()
+        while current < len(height):
+            while len(st) > 0 and height[current] > height[st[-1]]:
+                top = st.pop()
+                if len(st) == 0:
+                    break
+                distance = current - st[-1] - 1
+                bounded_height = min(height[current], height[st[-1]]) - height[top]
+                ans += distance * bounded_height
+
+            st.append(current)
+            current += 1
+        return ans
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 if __name__ == "__main__":
     s = Solution()
     print(s.trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
+    print(s.trap_st([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
