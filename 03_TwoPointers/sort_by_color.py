@@ -4,10 +4,11 @@ import sys
 # Sort by Color
 # https://www.interviewbit.com/problems/sort-by-color/
 #
-# Given an array with n objects colored red, white or blue,
-# sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+# Given an array with n objects colored red, white or blue, sort them so that objects 
+# of the same color are adjacent, with the colors in the order red, white and blue.
 #
-# Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+# Here, we will use the integers 0, 1, and 2 to represent the color red, white,
+# and blue respectively.
 #
 # Note: Using library sort function is not allowed.
 #
@@ -60,6 +61,7 @@ if __name__ == "__main__":
     s = Solution()
     A = [0, 1, 2, 0, 1, 2]
     A = [ 2, 0, 0, 1, 0, 0, 2, 2, 1, 1, 0, 0, 1, 0, 2, 1, 1, 0, 1, 0, 1, 2, 2, 2, 0, 0, 1, 0, 2, 1, 1, 2, 1, 2, 2, 1, 0, 2, 2, 1, 1, 1, 0, 1, 0, 1, 0, 2, 1, 2, 0, 2, 0, 1, 1, 0, 2, 2, 1, 2, 0, 2, 1, 1, 1, 2, 0, 1, 0, 2, 2, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 2, 1, 1, 0, 2, 1, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 1, 1, 0, 2, 1, 2, 2, 2, 1, 2, 2, 0, 1, 0, 1, 2, 1, 1, 0, 1, 2, 0, 1, 0, 2, 2, 1, 2, 1, 0, 2, 2, 1, 1, 0, 2, 1, 2 ]
+    A = [2,0,2,1,1,0]
     #s.sortColors(A)
     print(A)
     s.sort_colors(A)
