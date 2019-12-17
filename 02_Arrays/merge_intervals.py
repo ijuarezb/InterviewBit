@@ -58,3 +58,4 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
     print(s.insert([Interval(1, 2), Interval(3, 5), Interval(6, 7), Interval(8, 10), Interval(12, 16)], Interval(4, 9)))
+    print(s.insert([Interval(1, 3), Interval(6, 9)], Interval(2, 5)))
