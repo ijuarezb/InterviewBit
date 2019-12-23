@@ -18,26 +18,6 @@ class Solution:
 		A.sort()
 		return self._subsets(A, [], 0)
 
-	def subsetsE1(self, s):
-	    s.sort()
-	    r = [[]]
-	    for e in s:
-	        r += [x+[e] for x in r]
-	    return sorted(r)
-
-	def subsetsE2(self, A):
-	    A.sort(reverse=True)
-	    results = [[]]
-	    while A:
-	        n = A.pop()
-	        temp = []
-	        for result in results:
-	            temp.append(result + [])
-	            temp.append(result + [n])
-	        results = temp
-	    results.sort()
-	    return results
-
 # def subsetsWithDup(self, A):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 	def _subsetsWithDup(self, A, tmp, index):
