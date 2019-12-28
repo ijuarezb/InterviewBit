@@ -41,6 +41,16 @@ class  Solution():
 
 		return max_length
 
+	Complexity Analysis
+
+	# Time complexity : 
+	# O(2n)=O(n). In the worst case each character will be visited twice by i and j.
+
+	# Space complexity : 
+	# O(min(m,n)). Same as the previous approach. We need O(k) space for the sliding window, 
+	# where k is the size of the Set. The size of the Set is upper bounded by the size of the string 
+	# n and the size of the charset/alphabet m. 
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 if __name__ == '__main__':
 	s = Solution()
