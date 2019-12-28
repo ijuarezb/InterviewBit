@@ -58,7 +58,7 @@ class Solution:
     # @return an integer
     def maxPoints2(self, A, B):
         from collections import defaultdict
-        if len(A) < 2: return len(A)
+        if len(A) <= 2: return len(A)
         final_max = 0
         slopes = defaultdict(lambda : 0)
         
