@@ -1,5 +1,8 @@
 // C++ program for LFU cache implementation 
-#include <bits/stdc++.h> 
+// #include <bits/stdc++.h> 
+#include "/Users/ivanjuarez/stdc++.h"
+#include <map>
+#include <unordered_map>
 using namespace std; 
 
 // Generic function to swap two pairs 
@@ -81,8 +84,10 @@ void insert(vector<pair<int, int> >& v,
 void refer(vector<pair<int, int> >& cache, unordered_map<int, 
 					int>& indices, int value, int& cache_size) {
 
-	if (indices.find(value) == indices.end()) 
+	if (indices.find(value) == indices.end()) {
+		cout << "indices.end() = " << value << endl;
 		insert(cache, indices, value, cache_size); 
+	}
 	else
 		increment(cache, indices, indices[value], cache_size); 
 } 
@@ -99,5 +104,24 @@ int main() {
 	refer(cache, indices, 2, cache_size); 
 	refer(cache, indices, 4, cache_size); 
 	refer(cache, indices, 5, cache_size); 
+	cout << "cache[0]: " << cache[0].first << " " << cache[0].second << endl;
+	cout << "indices[0]: " << indices[0] << endl;
+	cout << "cache_size: " << cache_size << endl;
+	cout << "cache[1]: " << cache[1].first << " " << cache[1].second << endl;
+	cout << "indices[1]: " << indices[1] << endl;
+	cout << "cache_size: " << cache_size << endl;
+	cout << "cache[2]: " << cache[2].first << " " << cache[2].second << endl;
+	cout << "indices[2]: " << indices[2] << endl;
+	cout << "cache_size: " << cache_size << endl;
+	cout << "cache[3]: " << cache[3].first << " " << cache[3].second << endl;
+	cout << "indices[3]: " << indices[3] << endl;
+	cout << "cache_size: " << cache_size << endl;
+	cout << "cache[4]: " << cache[4].first << " " << cache[4].second << endl;
+	cout << "indices[4]: " << indices[4] << endl;
+	cout << "cache_size: " << cache_size << endl;
+	cout << "cache[5]: " << cache[5].first << " " << cache[5].second << endl;
+	cout << "indices[5]: " << indices[5] << endl;
+	cout << "cache_size: " << cache_size << endl;
+
 	return 0; 
 } 
