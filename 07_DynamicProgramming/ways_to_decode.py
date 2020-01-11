@@ -48,6 +48,7 @@ if __name__ == "__main__":
     s = Solution()
     print(s.numDecodings("0"))
     print(s.numDecodings("12"))
+    print(s.numDecodings("226"))
     print(s.numDecodings("10"))
     print(s.numDecodings("01"))
     print(s.numDecodings("100"))
