@@ -67,6 +67,9 @@ class Solution:
                         dp[i][j][0] += dp[i][k][0] * dp[k + 1][j][1] + dp[i][k][1] * dp[k + 1][j][0]
                         dp[i][j][1] += dp[i][k][0] * dp[k + 1][j][0] + dp[i][k][1] * dp[k + 1][j][1]
 
+        # for line in dp:
+        #     print(line)
+
         return dp[0][-1][0] % 1003
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
